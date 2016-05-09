@@ -1,0 +1,19 @@
+---
+
+- name: clone dotfiles repository
+  git: repo=https://github.com/mooja/dotfiles 
+       depth=1
+       dest=~/dotfiles
+
+- name: remove default config files
+  file: path=~/.bashrc state=absent
+
+- name: create symlinks to dotfiles in home dir
+  command: /usr/bin/stow {{ item }}
+  args:
+    chdir: ~/dotfiles
+  with_items:
+    - bash
+    - git
+    - tmux
+    - vim

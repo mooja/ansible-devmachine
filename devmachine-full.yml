@@ -1,0 +1,7 @@
+---
+
+- hosts: devmachine
+  become_user: root
+  roles:
+    - essentials
+    # - web-dev
