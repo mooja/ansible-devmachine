@@ -9,6 +9,4 @@
 
 - include: setup-tmux.yml
 
-# vim
-# - include: setup-vim.yml
-
+- include: setup-vim.yml
